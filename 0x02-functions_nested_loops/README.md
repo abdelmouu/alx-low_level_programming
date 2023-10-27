@@ -4,8 +4,8 @@ Overview of the Anatomy of a Function, Youtube
 The purpose of a function prototype
 What are Header Files?
 Description of Files
-0-holberton.c
-Prints ``Holberton`` followed by a new line, and returns 0.
+0-putchar.c
+Prints ``putchar`` followed by a new line, and returns 0.
 1-alphabet.c
 Prints the lowercase letters of the alphabet followed by a new line.
 2-print_alphabet_x10.c
