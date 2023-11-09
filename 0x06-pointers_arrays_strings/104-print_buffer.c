@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * print_buffer - prints a buffer
- * @b: buffer.
- * @size: size of buffer.
- * Return: no return.
+ * print_buffer - Prints a buffer.
+ * @buf: The buffer.
+ * @size: The size of the buffer.
+ * Return: None.
  */
 void print_buffer(char *b, int size)
 {
