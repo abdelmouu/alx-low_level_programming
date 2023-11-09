@@ -1,9 +1,11 @@
 #include "main.h"
 
 /**
- * print_chessboard - prints the chessboard
- * @a: input pointer.
- * Return: no return.
+ * print_chessboard - Prints the chessboard.
+ *
+ * @a: A pointer to the chessboard.
+ *
+ * Return: None.
  */
 void print_chessboard(char (*a)[8])
 {

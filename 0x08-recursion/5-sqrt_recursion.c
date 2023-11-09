@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * power_operation - returns the natural square root of a number.
- * @n: input number.
- * @c: iterator.
- * Return: square root or -1.
+ * power_operation - Calculates the natural square root of a number.
+ *
+ * @n: The number to calculate the square root of.
+ * @c: An iterator variable.
+ *
+ * Return: The square root of n, or -1 if n is negative.
  */
 int power_operation(int n, int c)
 {
