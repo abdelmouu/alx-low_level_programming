@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * cap_string - capitalizes all words of a string
- * @s: input string.
- * Return: the pointer to dest.
+ * capitalize_string - Capitalizes all words in a string.
+ * @s: The input string.
+ * Return: A pointer to the capitalized string.
  */
 
 char *cap_string(char *s)

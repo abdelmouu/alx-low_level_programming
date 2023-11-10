@@ -1,12 +1,9 @@
 #include "main.h"
 
 /**
- * _isalpha - Shows 1 if the input is a
- * letter Another cases, shows 0
- *
- * @c: The character in ASCII code
- *
- * Return: 1 for letters. 0 for the rest.
+ * _isalpha - Checks if the given character is a letter.
+ * @c: The character to check.
+ * Return: 1 if the character is a letter, 0 otherwise.
  */
 int _isalpha(int c)
 {

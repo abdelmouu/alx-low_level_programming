@@ -1,11 +1,11 @@
 #include "3-calc.h"
 
 /**
- * main - check the code for Holberton School students.
- * @argc: argument count.
- * @argv: argument vector.
+ * main - checks the code for Holberton School students.
+ * @argc: the number of command-line arguments.
+ * @argv: an array of command-line arguments.
  *
- * Return: Always 0.
+ * Return: 0 on success.
  */
 int main(int argc, char *argv[])
 {

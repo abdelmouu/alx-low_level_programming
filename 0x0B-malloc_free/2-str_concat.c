@@ -2,11 +2,10 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings.
- * @s1: first string.
- * @s2: second string.
- *
- * Return: pointer of an array of chars
+ * str_concat - concatenates 2 strings.
+ * @s1: the first string.
+ * @s2: the second string.
+ * Return: a pointer to concatenated string, or NULL on error.
  */
 char *str_concat(char *s1, char *s2)
 {

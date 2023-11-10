@@ -2,12 +2,11 @@
 #include <stdlib.h>
 /**
  * _calloc - allocates memory for an array.
- * @nmemb: number of elements.
- * @size: size of bytes.
+ * @nmemb: the number of elements in the array.
+ * @size: the size in bytes of each element.
  *
- * Return: pointer to the allocated memory.
- * if nmemb or size is 0, returns NULL.
- * if malloc fails, returns NULL.
+ * Return: a pointer to the allocated memory, or NULL on error.
+ * If `nmemb` or `size` is 0, the function returns NULL.
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {

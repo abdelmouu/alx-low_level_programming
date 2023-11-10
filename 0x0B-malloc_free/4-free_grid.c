@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * free_grid - frees a 2 dimensional grid.
- * @grid: multidimensional array of integers.
- * @height: height of the grid.
+ * free_grid - frees a 2D array of integers.
+ * @grid: the 2D array to free.
+ * @height: the height of the array.
  *
- * Return: no return
+ * Return: none.
  */
 void free_grid(int **grid, int height)
 {

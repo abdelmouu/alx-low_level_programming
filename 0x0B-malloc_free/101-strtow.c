@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * ch_free_grid - frees a 2 dimensional array.
- * @grid: multidimensional array of char.
- * @height: height of the array.
+ * ch_free_grid - frees a 2D array of characters.
+ * @grid: the 2D array to free.
+ * @height: the height of the array.
  *
- * Return: no return
+ * Return: none.
  */
 void ch_free_grid(char **grid, unsigned int height)
 {

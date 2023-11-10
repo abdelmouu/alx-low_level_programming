@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of a program.
- * @ac: argument count.
- * @av: argument vector.
+ * argstostr - concatenates all the command line arguments of a program.
+ * @ac: the number of command line arguments (argc).
+ * @av: an array of pointers to the command line arguments (argv).
  *
- * Return: pointer of an array of char
+ * Return: a pointer to the concatenated string, or NULL on error.
  */
 char *argstostr(int ac, char **av)
 {

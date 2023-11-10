@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - concatenates two strings.
- * @s1: first string.
- * @s2: second string.
- * @n: amount of bytes.
+ * string_nconcat - concatenates two strings, up to a specified number of bytes.
+ * @s1: the first string.
+ * @s2: the second string.
+ * @n: the number of bytes to concatenate.
  *
- * Return: pointer to the allocated memory.
- * if malloc fails, status value is equal to 98.
+ * Return: a pointer to the allocated memory, or NULL on error.
+ * If malloc fails, the status value is set to 98.
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {

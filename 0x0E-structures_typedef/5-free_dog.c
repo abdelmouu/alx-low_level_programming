@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * free_dog - frees dogs.
- * @d: struct dog.
+ * free_dog - frees a `struct dog` variable from memory.
+ * @d: the `struct dog` variable to free.
  *
- * Return: no return.
+ * Return: none.
  */
 void free_dog(dog_t *d)
 {

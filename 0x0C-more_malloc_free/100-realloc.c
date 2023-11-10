@@ -2,13 +2,12 @@
 #include <stdlib.h>
 /**
  * _realloc - reallocates a memory block.
- * @ptr: pointer to the memory previously allocated.
- * @old_size: size, in bytes, of the allocated space of ptr.
- * @new_size: new size, in bytes, of the new memory block.
+ * @ptr: the pointer to the memory previously allocated.
+ * @old_size: the size, in bytes, of the allocated space of `ptr`.
+ * @new_size: the new size, in bytes, of the new memory block.
  *
- * Return: ptr.
- * if new_size == old_size, returns ptr without changes.
- * if malloc fails, returns NULL.
+ * Return: a pointer to the reallocated memory block, or NULL on error.
+ * If `new_size` is equal to `old_size`, the original memory block is returned without any changes.
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {

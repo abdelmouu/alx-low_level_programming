@@ -2,10 +2,10 @@
 
 /**
  * op_add - adds two numbers.
- * @a: first number.
- * @b: second number.
+ * @a: the first number.
+ * @b: the second number.
  *
- * Return: add.
+ * Return: the sum of the two numbers.
  */
 int op_add(int a, int b)
 {

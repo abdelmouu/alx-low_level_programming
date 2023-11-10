@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _atoi - converts a string to an integer.
- * @s: input string.
- * Return: integer.
+ * _atoi - Parses a string and returns the corresponding integer.
+ * @str: The input string.
+ * Return: The parsed integer, or 0 if the string is not a valid integer.
  */
 int _atoi(char *s)
 {
