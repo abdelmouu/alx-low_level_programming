@@ -1,33 +1,71 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - Prints a list of integers represented
- * by a singly linked list.
- * @head : A pointer to the head node of the singly linked list.
- * Return: number of nodes in the list.
+ * free_listp - deallocates the memory occupied
+ * by a linked list of pointers.
+ * @head: The head pointer of the singly linked list.
  *
- **/
+ * Return: void
+ */
+void free_listp(listp_t **head)
+{
+	listp_t *temp;
+	listp_t *currently;
+
+	if (head != NULL)
+	{
+		currently = *head;
+		while ((temp = currently) != NULL)
+		{
+			currently = currently->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * print_listint_safe - safely prints the values of a
+ * singly linked list of integers.
+ * @head: The head pointer of the singly linked list.
+ *
+ * Return: The number of nodes in the list.
+ */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nodes = 0;
-	listint_t *seen[1024];
+	size_t num_nodes = 0;
+	listp_t *visited_nodes_ptr, *new, *add;
 
-	memset(seen, 0, sizeof(seen));
-
-	while (head)
+	visited_nodes_ptr = NULL;
+	while (head != NULL)
 	{
-		if (seen[head->n])
-		{
-			fprintf(stderr, "Cycle detected!\n");
+		new = malloc(sizeof(listp_t));
+
+		if (new == NULL)
 			exit(98);
+
+		new->p = (void *)head;
+		new->next = visited_nodes_ptr;
+		visited_nodes_ptr = new;
+
+		add = visited_nodes_ptr;
+
+		while (add->next != NULL)
+		{
+			add = add->next;
+			if (head == add->p)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_listp(&visited_nodes_ptr);
+				return (num_nodes);
+			}
 		}
 
-		seen[head->n] = head;
-		nodes++;
-		printf("%d ", head->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
+		num_nodes++;
 	}
 
-	printf("\n");
-	return (nodes);
+	free_listp(&visited_nodes_ptr);
+	return (num_nodes);
 }

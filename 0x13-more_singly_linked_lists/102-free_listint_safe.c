@@ -1,71 +1,69 @@
 #include "lists.h"
 
 /**
- * free_listp - deallocates the memory occupied
- * by a linked list of pointers.
- * @head: The head pointer of the singly linked list.
+ * free_listp2 - frees a linked list
+ * @head: pointer to the head of the list
  *
- * Return: void
+ * Frees the nodes in the list and sets the head pointer to NULL.
  */
-void free_listp(listp_t **head)
+void free_listp2(listp_t **head)
 {
-	listp_t *temp;
-	listp_t *currently;
+	listp_t *node = *head;
 
-	if (head != NULL)
+	while (node)
 	{
-		currently = *head;
-		while ((temp = currently) != NULL)
-		{
-			currently = currently->next;
-			free(temp);
-		}
-		*head = NULL;
+		listp_t *next = node->next;
+		free(node);
+		node = next;
 	}
+
+	*head = NULL;
 }
 
 /**
- * print_listint_safe - safely prints the values of a
- * singly linked list of integers.
- * @head: The head pointer of the singly linked list.
+ * free_listint_safe - frees a singly linked list of integers
+ * @head: pointer to the head of the list
  *
- * Return: The number of nodes in the list.
+ * Frees the nodes in the list, checking for cycles to prevent memory leaks.
+ * Returns the number of nodes freed.
  */
-size_t print_listint_safe(const listint_t *head)
+size_t free_listint_safe(listint_t **head)
 {
-	size_t num_nodes = 0;
-	listp_t *visited_nodes_ptr, *new, *add;
+    size_t nodes_freed = 0;
+    listp_t *visited_nodes = NULL;
+    listp_t *node;
 
-	visited_nodes_ptr = NULL;
-	while (head != NULL)
+    while (*head)
 	{
-		new = malloc(sizeof(listp_t));
+		node = malloc(sizeof(listp_t));
 
-		if (new == NULL)
-			exit(98);
-
-		new->p = (void *)head;
-		new->next = visited_nodes_ptr;
-		visited_nodes_ptr = new;
-
-		add = visited_nodes_ptr;
-
-		while (add->next != NULL)
+		if (!node)
 		{
-			add = add->next;
-			if (head == add->p)
-			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_listp(&visited_nodes_ptr);
-				return (num_nodes);
-			}
+			exit(98);
 		}
 
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		num_nodes++;
+		node->p = (void *)*head;
+		node->next = visited_nodes;
+		visited_nodes = node;
+
+		for (node = visited_nodes; node; node = node->next)
+		{
+			if (*head == node->p)
+			{
+                *head = NULL;
+					free_listp2(&visited_nodes);
+                return (nodes_freed);
+            }
+        }
+
+		listint_t *current = *head;
+		*head = (*head)->next;
+		free(current);
+		nodes_freed++;
 	}
 
-	free_listp(&visited_nodes_ptr);
-	return (num_nodes);
+	*head = NULL;
+	free_listp2(&visited_nodes);
+	return (nodes_freed);
 }
+
