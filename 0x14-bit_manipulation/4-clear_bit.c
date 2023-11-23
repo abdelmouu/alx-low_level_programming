@@ -3,7 +3,7 @@
 /**
  * clear_bit - sets the specified bit of an unsigned long integer to 0.
  * at a given index.
- * @n: The pointer to the unsigned long integer 
+ * @n: The pointer to the unsigned long integer
  * value containing the bit to modify.
  * @index: The index of the bit to set to 0.
  *
