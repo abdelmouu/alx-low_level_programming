@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * print_dlistint - prints the all element in a
@@ -9,23 +8,16 @@
  * @h: the head of the list
  * Return: number of nodes
  */
-size_t print_dlistint(const dlistint_t *h);
+size_t print_dlistint(const dlistint_t *h)
 {
-	int length;
-	length = 0;
-
-	if (h == NULL)
-		return (lenght);
-
-	while (h->prev != NULL)
-		h = h->prev;
+	int i = 0;
 
 	while (h != NULL)
 	{
 		printf("%d\n", h->n);
-		lenght++;
+		++i;
 		h = h->next;
 	}
 
-	return (length);
+	return (i);
 }
