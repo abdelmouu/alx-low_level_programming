@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_dlistint - prints the all element in a 
+ * print_dlistint - prints the all element in a
  * dlistint_t list
  *
  * @h: the head of the list
